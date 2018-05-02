@@ -5,6 +5,7 @@ modejs 简单mvc web框架
 ## 说明:
   自学四天nodejs写的mvc框架，有些代码很烂多多包涵！</br>
   代码需要改进的地方很多，项目是通过idea加载nodejs插件创建的，所以启动也是如此，启动访问路径:</br>
+  前提:本地安装node环境，或者idea安装node插件(https://blog.csdn.net/duoduo1636546/article/details/80104711)</br>
   启动js：</br>
   bin/www</br>
   首页:</br>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="title='系统设置',active='settings'">
+
+<script src="/static/plugins/dzh.js"></script>
+<script src="/static/js/manager/list.js"></script>
+<script src="/static/css/manager/list.css"></script>
+
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-sm-12 column">
+            <h1 class="page-header">管理&nbsp;&nbsp;&nbsp;<small>用户列表</small></h1>
+        </div>
+
+        <form role="form">
+            <div class="form-group col-sm-4">
+                <label>用户名</label>
+                <input type="text" class="form-control" id="userName"/>
+            </div>
+
+            <div class="form-group col-sm-4">
+                <label class="control-label col-sm-12">性别</label>
+                <div class="col-sm-12">
+                    <select name="sex" id="sex" class="form-control">
+                        <option value="">全部</option>
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-4" style="text-align: right;margin-top: 2%">
+                <button type="reset" class="btn btn-white" onclick="clearTable()" style="margin-right: 1%">清空</button>
+                <button type="button" class="btn btn-white" onclick="queryData()">查询</button>
+            </div>
+        </form>
+
+        <div class="col-sm-12 column" style="margin-top: 3%">
+            <table id="table"
+                   data-unique-id="id"
+                   data-toggle="table"
+                   data-checkbox="true"
+                   data-url="/mongo/findAll"
+                   data-side-pagination="server"
+                   data-query-params="queryParams"
+                   data-response-handler="getServiceData"
+                   data-locale="zh-CN"
+                   data-page-size="25"
+                   data-pagination="true">
+                <thead>
+                    <tr>
+                        <th data-field="userName" data-align="center" data-halign="center">用户名</th>
+                        <th data-field="nickName" data-align="center" data-halign="center">昵称</th>
+                        <th data-field="sex" data-formatter="sexFormat" data-align="center" data-halign="center">性别</th>
+                        <th data-field="age" data-align="center" data-halign="center">年龄</th>
+                        <th data-field="mobile" data-align="center" data-halign="center">手机号</th>
+                        <th data-field="row" data-formatter="nameFormatter" data-align="center" data-halign="center" data-events="inputEvents">操作</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/plugins/dzh.js"></script>
+    <script src="/static/js/manager/detail.js"></script>
+    <script>
+
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <div class="col-md-12 column">
+        <h1 class="page-header">管理&nbsp;&nbsp;&nbsp;
+            <small>nodejs mongo 简单框架搭建</small>
+        </h1>
+        <!--<p><font size="5">么么哒!</font></p>-->
+    </div>
+</div>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <form role="form">
+                <div class="form-group col-sm-4">
+                    <label>用户名</label>
+                    <input type="text" class="form-control" id="userName"/>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <label>昵称</label>
+                    <input type="text" class="form-control" id="nickName"/>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <label>年龄</label>
+                    <input type="text" class="form-control" id="age"/>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <label>手机号</label>
+                    <input type="text" class="form-control" id="mobile"/>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <label>性别</label>
+                    <select id="sex" class="form-control">
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12 column next-line" style="text-align: right">
+                    <button type="button" id="btnAdd" class="btn btn-white" onclick="add()">新增</button>
+                    <button type="button" class="btn btn-white" onclick="commit()">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

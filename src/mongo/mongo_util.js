@@ -59,7 +59,7 @@ module.exports = {
         });
     },
 
-    // 查询所有，以BootStrap形式返回
+    // 查询所有，以BootStrapTable可解析格式返回
     findAllBootStrap: function (dbName, collectionName, cri, res) {
         MongoClient.connect(url, function(err, db) {
             if (err) throw err;

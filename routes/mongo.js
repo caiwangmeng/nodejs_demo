@@ -46,7 +46,7 @@ router.post('/update', function(req, res, next) {
  * 查找
  */
 router.get('/find', function(req, res, next) {
-    var whereStr = req.query;
+    let whereStr = req.query;
     mongo_util.findOne(INNER_DB, SITE, whereStr, res);
 });
 

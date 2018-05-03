@@ -1,5 +1,5 @@
 
-var dataInitParam;
+let dataInitParam;
 
 //文档加载事件，整个文档加载完成后执行。就仅仅只需要加载所有的DOM结构，在浏览器把所有的HTML放入DOM tree之前就执行js效果。包括在加载外部图片和资源之前。
 $(function(){
@@ -29,25 +29,27 @@ $(function(){
 
 function commit() {
     // 询问框
-    // layer.confirm(
-    //     '确定要提交吗？',
-    //     {btn: ['确定','取消']},
-    //     function(){
+    layer.confirm(
+        '确定要提交吗？',
+        {btn: ['确定','取消']},
+        function(){
     updateDetail();
-    // });
+    });
 }
 
 function updateDetail(){
     // 初始化内容
-    var userName = $("#userName").val();
-    var nickName = $("#nickName").val();
-    var age = $("#age").val();
-    var mobile = $("#mobile").val();
-    var sex = $("#sex").val();
+    let userName = $("#userName").val();
+    let nickName = $("#nickName").val();
+    let age = $("#age").val();
+    let mobile = $("#mobile").val();
+    let sex = $("#sex").val();
 
-    var url = "/mongo/update";
+    let msg = "更新成功";
+    let url = "/mongo/update";
     if (isEmpty(dataInitParam)){
         url = "/mongo/save";
+        msg = "保存成功";
     }
     $.ajax({
         url: url,
@@ -61,7 +63,7 @@ function updateDetail(){
         type: "POST",
         dataType: "json",
         success: function (data) {
-            layer.msg("更新成功");
+            layer.msg(msg);
         }
     });
 }

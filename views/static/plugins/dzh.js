@@ -1,10 +1,11 @@
 /* 引入基础控件 */
+document.write("<script src=\"/static/plugins/bootstrap/jquery-2.1.4.min.js\"></script>");
+/* layer 必须先引用jq */
 document.write("<script language=javascript src='/static/plugins/layer/layer.js'></script>");
 
 /* 引入BootStrap相关组件  */
 document.write("<link href=\"/static/plugins/bootstrap/bootstrap.css\" rel=\"stylesheet\"/>");
 document.write("<link href=\"/static/plugins/bootstrap/bootstrap-table.css\" rel=\"stylesheet\"/>");
-document.write("<script src=\"/static/plugins/bootstrap/jquery-2.1.4.min.js\"></script>");
 document.write("<script src=\"/static/plugins/bootstrap/bootstrap.js\"></script>");
 document.write("<script src=\"/static/plugins/bootstrap/bootstrap-table.js\"></script>");
 
@@ -81,7 +82,7 @@ function ajaxPost(url, data, msg) {
             layer.msg(msg);
             setTimeout( function(){
                 location.reload();
-            }, 1000*1.5);  // 延迟多少毫秒
+            }, 1000);  // 延迟多少毫秒
         }
     });
 }

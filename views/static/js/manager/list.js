@@ -1,3 +1,5 @@
+const refreshUrl = "/mongo/findAll";
+
 //设置参数
 function queryParams(params) {
     params.userName = $("#userName").val();
@@ -11,12 +13,12 @@ function getServiceData(res) {
 }
 
 function queryData() {
-    refresh("/mongo/findAll");
+    refresh(refreshUrl);
 }
 
 function clearTable() {
     $("#table").bootstrapTable("removeAll");
-    refresh("/mongo/findAll");
+    refresh(refreshUrl);
 }
 
 // 菜单格式化
@@ -49,14 +51,14 @@ window.inputEvents = {
 
 function deleteObject(mobile) {
     // 询问框
-    // layer.confirm(
-    //     '确定要删除吗？',
-    //     {btn: ['确定','取消']},
-    //     function(){
-            var url = "/mongo/delete";
-            var data  = {};
+    layer.confirm(
+        '确定要删除吗？',
+        {btn: ['确定','取消']},
+        function(){
+            let url = "/mongo/delete";
+            let data  = {};
             data.mobile = mobile;
             ajaxPost(url, data, "删除成功");
-        // }
-    // );
+        }
+    );
 }
